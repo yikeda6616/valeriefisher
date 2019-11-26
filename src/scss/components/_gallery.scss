@@ -1,0 +1,25 @@
+.gallery {
+	padding: 3px;
+
+	&__img {
+		width: 30rem;
+		transition: all 0.2s;
+		@include mq-pc {
+			filter: grayscale(1);
+		}
+	}
+	&__row {
+		align-items: center;
+	}
+	a {
+		color: $color-grey-dark;
+		&:hover .gallery__img {
+			@include mq-pc {
+				filter: none;
+			}
+		}
+		h3 {
+			margin-top: 2rem;
+		}
+	}
+}

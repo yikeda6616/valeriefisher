@@ -1,0 +1,143 @@
+.header {
+	&__logo {
+		position: fixed;
+		z-index: 1;
+		height: 12rem;
+		width: 12rem;
+		background: url('#{$image-path}/logo-mask.png') center/cover no-repeat;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		@include mq-sp {
+			height: 8rem;
+			width: 8rem;
+		}
+	}
+}
+
+/* 
+ * SP Menu Drawer style 
+ **/
+#sp-nav {
+	position: fixed;
+	z-index: 1;
+	top: 3rem;
+	right: 3rem;
+	@include mq-sp {
+		top: 2rem;
+		right: 2rem;
+	}
+	height: 60px;
+	width: 60px;
+	background: $color-black;
+}
+
+#nav-toggle {
+	display: block;
+	position: relative;
+	z-index: 1;
+	top: 50%;
+	left: 78%;
+	transform: translate(-50%, -50%);
+	input {
+		display: block;
+		width: 4rem;
+		height: 3.2rem;
+		position: absolute;
+		top: -7px;
+		left: -5px;
+		cursor: pointer;
+		opacity: 0;
+		z-index: 2;
+		&:checked ~ span {
+			// transform bars into cross mark
+			opacity: 1;
+			transform: rotate(45deg) translate(-1px, 7px);
+			background: #222;
+			&:nth-last-child(2) {
+				transform: rotate(-45deg) translate(0, 0);
+			}
+			&:nth-last-child(3) {
+				// hide middle bar when checked
+				opacity: 0;
+				transform: rotate(0deg) scale(0.2, 0.2);
+			}
+		}
+		&:checked ~ ul {
+			// draw submenu when checked
+			transform: translate(-50%, 0);
+		}
+	}
+	& span {
+		display: block;
+		width: 3rem;
+		height: 2px;
+		margin-bottom: 5px;
+		position: relative;
+		background: $color-grey-light;
+		border-radius: 3px;
+		z-index: 1;
+		transition: transform 0.5s cubic-bezier(0.8, 0.2, 0.05, 1),
+			background 0.5s cubic-bezier(0.8, 0.2, 0.05, 1), opacity 0.55s ease;
+		&:nth-child(3) {
+			// middle one
+			width: 0px;
+			// 	margin-left: -10px;
+		}
+		&:first-child {
+			transform-origin: 0% 0%;
+		}
+		&:nth-last-child(2) {
+			transform-origin: 0% 100%;
+		}
+	}
+}
+
+/* drawer content box */
+#nav-content {
+	text-align: left;
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	margin: -7.4rem 0 0 7.4rem;
+	@include mq-sp {
+		margin: -6.4rem 0 0 6.4rem;
+	}
+	padding: 20vh 0 0 10vw;
+	font-size: 3.2rem;
+	background: #fff;
+	transform-origin: 0% 0%;
+	-webkit-transform: translate(100%, 0);
+	transform: translate(100%, 0);
+	transition: -webkit-transform 0.5s cubic-bezier(0.8, 0.2, 0.05, 1);
+	transition: transform 0.5s cubic-bezier(0.8, 0.2, 0.05, 1);
+	@include mq-sp {
+		font-size: 2.4rem;
+		padding: 20vh 0 0 10vw;
+	}
+	li:first-child {
+		margin: 30px auto;
+	}
+	li a {
+		width: 40rem;
+		padding: 0.5rem 1rem;
+		display: inline-block;
+		color: $color-black;
+		text-transform: uppercase;
+		&:hover {
+			color: #2b272c;
+		}
+		&:after {
+			content: '';
+			display: block;
+			width: 0;
+			height: 2px;
+			background: transparent;
+			transition: all 0.1s ease-in-out;
+		}
+		&:hover:after {
+			width: 100%;
+			background: #555;
+		}
+	}
+}

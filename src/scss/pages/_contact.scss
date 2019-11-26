@@ -1,0 +1,6 @@
+.contact {
+	padding: 8rem;
+	@include mq-sp {
+		padding: 4rem;
+	}
+}

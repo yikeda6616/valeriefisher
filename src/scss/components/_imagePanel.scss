@@ -1,0 +1,46 @@
+.imagePanel {
+	height: 40rem;
+	filter: none;
+	transition: all 0.3s;
+
+	&--1 {
+		background: url('https://images.unsplash.com/photo-1528146820097-5198358cbb89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80')
+			center/cover no-repeat;
+	}
+	&--2 {
+		background: url('https://images.unsplash.com/photo-1495649904698-0f3670bdf61f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=616&q=80')
+			center/cover no-repeat;
+	}
+	&--3 {
+		background: url('https://images.unsplash.com/photo-1506836467174-27f1042aa48c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80')
+			center/cover no-repeat;
+	}
+
+	&__caption {
+		color: $color-black;
+		transition: all 0.2s;
+		transform: translateY(0);
+		text-transform: uppercase;
+		font-size: 2.4rem;
+		@include mq-pc {
+			opacity: 0;
+		}
+		&:hover {
+			@include mq-pc {
+				transform: translateY(-20rem);
+				color: white;
+				opacity: 1;
+			}
+		}
+	}
+	&:hover {
+		filter: blur(2px);
+		& ~ .imagePanel__caption {
+			@include mq-pc {
+				transform: translateY(-20rem);
+				opacity: 1;
+				color: white;
+			}
+		}
+	}
+}

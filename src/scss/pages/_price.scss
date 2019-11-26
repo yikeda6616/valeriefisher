@@ -1,0 +1,20 @@
+.price-card {
+	color: $color-black;
+	padding: 3rem;
+
+	&__value {
+		font-size: 3.2rem;
+	}
+	&__details {
+		ul {
+			li {
+				padding: 1rem;
+				border-bottom: 1px solid $color-grey;
+			}
+		}
+	}
+}
+
+.price-cta {
+	color: $color-black;
+}

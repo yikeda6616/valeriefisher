@@ -1,0 +1,56 @@
+.footer {
+	display: flex;
+	justify-content: space-between;
+	letter-spacing: 2px;
+	@include mq-sp {
+		flex-direction: column;
+		align-items: center;
+	}
+	&__copy {
+		text-transform: uppercase;
+		@include mq-sp {
+			order: 2;
+			margin-bottom: 4rem;
+		}
+		small {
+			font-weight: 700;
+			color: $color-grey-dark;
+		}
+	}
+	&__sns {
+		text-align: center;
+		@include mq-sp {
+			order: 1;
+			margin-bottom: 8rem;
+		}
+		h4 {
+			text-transform: uppercase;
+			font-size: 1.4rem;
+			font-weight: 700;
+			color: $color-grey-dark;
+			display: none;
+			@include mq-sp {
+				display: block;
+			}
+		}
+		ul {
+			display: flex;
+			li {
+				margin-left: 2rem;
+				&:first-child {
+					margin-left: 0;
+				}
+			}
+		}
+		a {
+			color: $color-grey-dark;
+			transition: all 0.2s;
+			@include mq-sp {
+				font-size: 1.8rem;
+			}
+			&:hover {
+				color: $color-black;
+			}
+		}
+	}
+}

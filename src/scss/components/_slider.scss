@@ -1,0 +1,22 @@
+#slider {
+	position: relative;
+	height: 60rem;
+	width: 48rem;
+	@include mq-sp {
+		height: 40rem;
+		width: 32rem;
+		margin-top: 8rem;
+	}
+}
+.slider-img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: opacity 0.5s ease-in;
+}
+
+.slider-img + .slider-img {
+	opacity: 0;
+}

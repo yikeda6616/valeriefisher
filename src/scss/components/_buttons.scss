@@ -1,0 +1,21 @@
+.btn {
+  display: inline-block;
+  padding: 1rem 8rem;
+  font-size: 1.6rem;
+  border-radius: 0;
+  text-transform: uppercase;
+  background: $color-grey;
+  &:hover {
+    background: $color-black;
+    color: #fff;
+  }
+}
+
+.btn-outline-danger {
+  &:hover {
+    color: #dc3545;
+    background-color: transparent;
+    border-color: transparent;
+    opacity: 0.8;
+  }
+}
